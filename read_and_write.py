@@ -1,11 +1,16 @@
 import json
 import add_and_show
+from json.decoder import JSONDecodeError
+
 
 def re_file(): # to read todos from file
     with open("vault.json","r") as ref:
-        json_dict = json.load(ref)
-    return json_dict
-
+        try:
+            json_dict = json.load(ref)
+            return json_dict
+        except JSONDecodeError:
+            json_dict = {}
+            return json_dict
 
 def wr_file(): # to save todos to file
     todos = re_file()
