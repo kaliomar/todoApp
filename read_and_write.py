@@ -1,5 +1,5 @@
 import json
-import shared
+import add_and_show
 
 def re_file(): # to read todos from file
     with open("vault.json","r") as ref:
