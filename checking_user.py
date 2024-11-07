@@ -19,7 +19,7 @@ def checking_user():
                 usr_password = input("password: ")
                 if usr_password == new_dict[key_name][1]:
                     print("you are log in ../..")
-                    import main_app
+                    import add_and_show
                 else:
                     print("wrong password")
                     checking_user()

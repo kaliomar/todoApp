@@ -1,10 +1,13 @@
 import json
 import add_and_show
 from json.decoder import JSONDecodeError
+from checking_user import get_user_data
 
+usr_name,key_name,name = get_user_data()
+file_name = f"{name}'s_todos.json"
 
 def re_file(): # to read todos from file
-    with open("vault.json","r") as ref:
+    with open(file_name,"r") as ref:
         try:
             json_dict = json.load(ref)
             return json_dict
@@ -31,7 +34,7 @@ def wr_file(): # to save todos to file
         li = [todos[date],mission]
         todos[date] = li
 
-    with open("vault.json",mode="w") as wrf:
+    with open(file_name,mode="w") as wrf:
         json.dump(todos, wrf)
     wrf.close()
 
