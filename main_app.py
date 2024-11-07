@@ -1,4 +1,6 @@
+import checking_user
 from add_and_show import add_todo, show_missions
+
 
 def choosing(): # to ask if user want to add or check date and mission
     print("          **** type (a) for adding new mission or (s) to show missions on specific date **** ")

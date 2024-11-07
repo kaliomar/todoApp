@@ -1,2 +1,2 @@
-vault.json
+*.json
 __pycache__/

@@ -1,5 +1,6 @@
+import json
+
 class users:
-    counter = 0
     
     def get_data(self):
         self.name = input("name: ")
@@ -8,15 +9,9 @@ class users:
     
     
     def creat_file(self):
-        self.counter+=1
         new_file = open(f"{self.name}'s_todos.json","w")
         user_data_dict = {}
-        user_data_dict[self.name] = [self.counter,self.name,self.password,self.email]
-        first_item_name = str(user_data_dict)
-        new_file.write(first_item_name)
-        
+        user_data_dict[f"{self.name}'s_data"] = [self.name,self.password,self.email]
+        json.dump(user_data_dict,new_file)
     
 
-hamed = users()
-hamed.get_data()
-hamed.creat_file()
