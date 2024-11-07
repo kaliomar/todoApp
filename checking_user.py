@@ -31,7 +31,13 @@ def checking_user():
                 else:
                     print("good bye")
     except:
-        import assign_users
-        assign_users.users.creat_file(name)
+        print("user not found...")
+        opinion = input("IF YOU WANT TO SIGN UP TYPE y: ")
+        if opinion == "y":
+            import assign_users
+            user = assign_users.users()
+            user.get_data()
+            user.creat_file()
+        else:
+            print("good bye")
 
-checking_user()
