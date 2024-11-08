@@ -1,5 +1,4 @@
 import json
-
 def add_todo(): # this function for adding mission to json file
     from read_and_write import wr_file
     wr_file()

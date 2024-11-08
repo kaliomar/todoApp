@@ -2,17 +2,19 @@ import json
 import add_and_show
 from json.decoder import JSONDecodeError
 from checking_user import get_user_data
+from checking_user import checking_user as chk_usr
 
-usr_name,key_name,name = get_user_data()
+name = chk_usr()
+
 file_name = f"{name}'s_todos.json"
 
 def re_file(): # to read todos from file
     try:    
         with open(file_name,"r") as ref:
-            try:
+            try: 
                 json_dict = json.load(ref)
                 return json_dict
-            except JSONDecodeError:
+            except JSONDecodeError: # to avoid empty 
                 json_dict = {}
                 return json_dict
     except FileNotFoundError:

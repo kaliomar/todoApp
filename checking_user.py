@@ -1,22 +1,23 @@
 import json
 
-
+name = input("name: ")
+usr_password = input("password: ")
 def get_user_data():
-    name = input("name: ")
     file_name = f"{name}'s_todos.json"
     key_name = f"{name}'s_data"
-    return file_name,key_name,name
-
+    all_data = (file_name, key_name, name)
+    return all_data
 
 def checking_user():
     tuple_data = get_user_data()
     usr_name,key_name,name = tuple_data
+    final_name = name
     try:
         with open(usr_name,"r") as filex:
             new_dict = json.load(filex)
 
             if name == new_dict[key_name][0]:
-                usr_password = input("password: ")
+                pass
                 if usr_password == new_dict[key_name][1]:
                     print("you are log in ../..")
                     import add_and_show
@@ -40,4 +41,5 @@ def checking_user():
             user.creat_file()
         else:
             print("good bye")
-
+    return final_name
+    
