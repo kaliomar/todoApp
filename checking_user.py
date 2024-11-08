@@ -1,18 +1,18 @@
 import json
 
-name = input("name: ")
-usr_password = input("password: ")
-def get_user_data():
+name = input("name: ") # take user name 
+usr_password = input("password: ") # take password
+def get_user_data(): # make input useful 
     file_name = f"{name}'s_todos.json"
     key_name = f"{name}'s_data"
     all_data = (file_name, key_name, name)
     return all_data
 
-def checking_user():
+def checking_user(): # check if user is already registered or not
     tuple_data = get_user_data()
     usr_name,key_name,name = tuple_data
     final_name = name
-    try:
+    try: # avoid user name is not registered
         with open(usr_name,"r") as filex:
             new_dict = json.load(filex)
 
