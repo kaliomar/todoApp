@@ -7,13 +7,16 @@ usr_name,key_name,name = get_user_data()
 file_name = f"{name}'s_todos.json"
 
 def re_file(): # to read todos from file
-    with open(file_name,"r") as ref:
-        try:
-            json_dict = json.load(ref)
-            return json_dict
-        except JSONDecodeError:
-            json_dict = {}
-            return json_dict
+    try:    
+        with open(file_name,"r") as ref:
+            try:
+                json_dict = json.load(ref)
+                return json_dict
+            except JSONDecodeError:
+                json_dict = {}
+                return json_dict
+    except FileNotFoundError:
+        print("No such data about this user")
 
 def wr_file(): # to save todos to file
     todos = re_file()
