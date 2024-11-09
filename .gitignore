@@ -1,3 +1,5 @@
 *.json
 __pycache__/
 !test's_todos.json
+.venv/
+try.py
